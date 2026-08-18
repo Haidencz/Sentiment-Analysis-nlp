@@ -1,4 +1,5 @@
 from pathlib import Path
+import pandas as pd
 
 data_path = Path("data/aclImdb/train")
 positive_path = data_path/"pos"
@@ -28,7 +29,10 @@ for file_path in negative_files:
         review_text = file.read()
     reviews.append(review_text)
     labels.append(0)  #neg loop and store
-    
+df = pd.DataFrame({"review": reviews, "sentiment": labels})
+print(df.head())
+print(df.tail())
+print(df["sentiment"].value_counts())
 print(len(reviews)) #should print 25000
 print(len(labels)) #should print 25000
 print("first label: ", labels[0])
