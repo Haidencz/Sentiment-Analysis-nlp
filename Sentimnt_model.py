@@ -5,6 +5,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
 
 data_path = Path("data/aclImdb/train")
 positive_path = data_path/"pos"
@@ -55,7 +56,17 @@ print(y_test.iloc[:10].values) #the actual answerss (compare the 1s and 0s if sa
 accuracy = accuracy_score(y_test, predictions)
 print("accuracy:", accuracy)
 print(classification_report(y_test, predictions))
-
+cm = confusion_matrix(y_test, predictions) 
+print(cm)
+##ignore just evaluatory
+wrong_predidctions = X_test[predictions != y_test]
+print("\n Misclassifications:")
+for index in wrong_predidctions.index[:5]:
+    print("\n review:")
+    print(X_test[index][:500])
+    print("Actual:", y_test[index])
+    print("predicted:", predictions[list(X_test.index).index(index)])
+##ignore just evaluatory
 print("training reviews:", len(X_train)) #20k
 print("test reviews:", len(X_test)) #5000
 
