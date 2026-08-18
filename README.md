@@ -2,18 +2,18 @@
 A small NLP project that classifies movie reviews as either positive or negative.
 The project uses the IMDb Large Movie Review Dataset and a logistic regression classifier trained on TFIDF features.
 
-FEATURES: 
-loads and labels IMDB movie reviews
-removes basic HTML tags from the review text
-converts text into TFIDF features
-uses unigram and bigrams
-trains a logistic regression model
-displays accuracy, precision, recall and f1 score
-includes a streamlit interface for testing custom reviews
-shows prediction confidence
-funny reaction image to predictions :p
+##FEATURES: 
+- loads and labels IMDB movie reviews
+- removes basic HTML tags from the review text
+- converts text into TFIDF features
+- uses unigram and bigrams
+- trains a logistic regression model
+- displays accuracy, precision, recall and f1 score
+- includes a streamlit interface for testing custom reviews
+- shows prediction confidence
+- funny reaction image to predictions :p
 
-MODEL: 
+##MODEL: 
 [The current model]
 TF IDF vectorisation
 unigrams and bigrams
@@ -26,7 +26,7 @@ the dataset is split into 20,000 training reviews and 5000 test reviews
 the current test accuracy is approximately:
 89.3%
 
-DATASET:
+##DATASET:
 This project uses the standford IMDb Large Movie Review Dataset.
 the dataset contains positive and negative movie reviews stored as individual text files.
 the dataset itself is not included in this repo.
@@ -39,21 +39,21 @@ The training data should then be located at:
 data/aclImdb/train/pos 
 data/aclImdb/train/neg
 
-RUNNING THE PROJECT:
+##RUNNING THE PROJECT:
 
 Create and active a Python virtual environment, then istall the dependencies
-
+```bash
 pip install -r requirements.txt
-
+```
 Train the model
-
+```bash
 python Sentimnt_model.py
-
+```
 run the Streamlit interface
-
+```bash
 streamlit run app.py
-
-RESULTS:
+```
+##RESULTS:
 The current model achieved below:
 accuracy: 89.3%
 negative precision: 90%
@@ -63,7 +63,7 @@ positive recall: 91%
 
 during testing i figured the model also can still struggle with reviews containing sarcasm or any mixed sentiment.
 
-IMPROVEMENTS:
+##IMPROVEMENTS:
 Some improvements would be
 comparing the current model with a transformer based model
 improving preprocessing
@@ -71,11 +71,10 @@ testing different model parameters
 improving the interface (nt removing images)
 analysing misclassifed reviews to improve model
 
-TECHNOLOGIES 
+##TECHNOLOGIES 
 Python
 pandas
 scikit-learn
 Streamlit
 joblib
 
-//First project//
