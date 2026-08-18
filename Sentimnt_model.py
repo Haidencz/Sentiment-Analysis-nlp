@@ -51,7 +51,7 @@ X_test_tfidf = vectorizer.transform(X_test)
 print(X_train_tfidf.shape) #features
 print(X_test_tfidf.shape) #features
 
-model = LogisticRegression(max_iter=1000)
+model = LogisticRegression(max_iter=1000, C=2)
 model.fit(X_train_tfidf, y_train)
 predictions = model.predict(X_test_tfidf)
 print(predictions[:10]) #predict the first 10 reviews
