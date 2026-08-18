@@ -6,6 +6,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
+import re
 
 data_path = Path("data/aclImdb/train")
 positive_path = data_path/"pos"
@@ -23,16 +24,18 @@ print(positive_review[:500]) #show a pos review
 print("\n random - review:")
 print(negative_review[:500]) #show a neg review
 
+def clean_review(text):
+    return re.sub(r"<.*?>", " ", text)
 reviews = []
 labels = []
 for file_path in positive_files:
     with open(file_path, "r", encoding="utf-8") as file:
-        review_text = file.read()
+        review_text = clean_review(file.read())
     reviews.append(review_text)
     labels.append(1) #pos loop & store
 for file_path in negative_files:
     with open(file_path, "r", encoding="utf-8") as file:
-        review_text = file.read()
+        review_text = clean_review(file.read())
     reviews.append(review_text)
     labels.append(0)  #neg loop and store
 df = pd.DataFrame({"review": reviews, "sentiment": labels})
