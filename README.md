@@ -2,6 +2,8 @@
 A small NLP project that classifies movie reviews as either positive or negative.
 The project uses the IMDb Large Movie Review Dataset and a logistic regression classifier trained on TFIDF features.
 
+Streamlit link: https://sentiment-analysis-nlp-haiden.streamlit.app/
+![Sentiment analyser screenshot](assets/app-screenshot.png)
 ## FEATURES: 
 - loads and labels IMDB movie reviews
 - removes basic HTML tags from the review text
@@ -64,12 +66,12 @@ positive recall: 91%
 during testing i figured the model also can still struggle with reviews containing sarcasm or any mixed sentiment.
 
 ## IMPROVEMENTS:
-Some improvements would be
-comparing the current model with a transformer based model
-improving preprocessing
-testing different model parameters
-improving the interface (nt removing images)
-analysing misclassifed reviews to improve model
+- Some improvements would be
+- comparing the current model with a transformer based model
+- improving preprocessing
+- testing different model parameters
+- improving the interface (nt removing images)
+- analysing misclassifed reviews to improve model
 
 ## TECHNOLOGIES 
 Python
