@@ -221,5 +221,5 @@ __marimo__/
 data/aclImdb/
 
 #pk1s
-sentiment_model.pk1
-tfidf_vectorizer.pk1
+#sentiment_model.pk1
+#tfidf_vectorizer.pk1
