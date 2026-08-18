@@ -1,6 +1,6 @@
 from pathlib import Path
 import pandas as pd
-
+from sklearn.model_selection import train_test_split
 data_path = Path("data/aclImdb/train")
 positive_path = data_path/"pos"
 negative_path = data_path / "neg"
@@ -33,6 +33,12 @@ df = pd.DataFrame({"review": reviews, "sentiment": labels})
 print(df.head())
 print(df.tail())
 print(df["sentiment"].value_counts())
+X = df["review"]
+y = df["sentiment"]
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
+print("training reviews:", len(X_train)) #20k
+print("test reviews:", len(X_test)) #5000
+
 print(len(reviews)) #should print 25000
 print(len(labels)) #should print 25000
 print("first label: ", labels[0])
