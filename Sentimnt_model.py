@@ -42,8 +42,8 @@ print(X_test_tfidf.shape) #features
 
 model = LogisticRegression(max_iter=1000, C=2)
 model.fit(X_train_tfidf, y_train)
-joblib.dump(model, "sentiment_model.pk1")
-joblib.dump(vectorizer, "tfidf_vectorizer.pk1")
+joblib.dump(model, "sentiment_model.pkl")
+joblib.dump(vectorizer, "tfidf_vectorizer.pkl")
 
 predictions = model.predict(X_test_tfidf)
 accuracy = accuracy_score(y_test, predictions)
