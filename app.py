@@ -7,8 +7,10 @@ st.title("Movie Review sentiment Analyser")
 review = st.text_area("enter a movie review")
 if st.button("Analyse"):
     review_vector = vectorizer.transform([review])
+    probabilities = model.predict_proba(review_vector)[0]
     prediction = model.predict(review_vector)
+    confidence = max(probabilities) * 100
     if prediction == 1:
-        st.success("positive review")
+        st.success(f"positive review {confidence: .1f}% confidence")
     else:
-        st.error("negative review")
+        st.error(f"negative review {confidence: .1f}% confidence")
