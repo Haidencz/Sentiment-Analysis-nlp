@@ -219,3 +219,7 @@ __marimo__/
 
 # OG dataset 
 data/aclImdb/
+
+#pk1s
+sentiment_model.pk1
+tfidf_vectorizer.pk1
