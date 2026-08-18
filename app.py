@@ -4,8 +4,8 @@ from PIL import Image
 positive_image = Image.open("assets/positive1.png")
 negative_image = Image.open("assets/negative.png")
 
-model = joblib.load("sentiment_model.pk1")
-vectorizer = joblib.load("tfidf_vectorizer.pk1")
+model = joblib.load("sentiment_model.pkl")
+vectorizer = joblib.load("tfidf_vectorizer.pkl")
 st.title("Movie Review sentiment Analyser")
 review = st.text_area("enter a movie review and the model will try to predict whether the sentiment is positive or negative")
 #st.write("Enter a movie review and the model will try to predict whether the sentiment is positive or negative")
